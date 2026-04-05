@@ -1,0 +1,34 @@
+services:
+  # ── Backend Service ──────────────────────────────────────────
+  - type: web
+    name: canaryops-backend
+    env: node
+    rootDir: backend
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start # Ensure this command matches your package.json start script
+    envVars:
+      - key: PORT
+        value: 4000
+      - key: USE_MOCK_DATA
+        value: "true"
+      - key: FRONTEND_URL
+        fromService:
+          type: web
+          name: canaryops-frontend
+          property: url
+
+  # ── Frontend Service ─────────────────────────────────────────
+  - type: web
+    name: canaryops-frontend
+    env: node
+    rootDir: frontend
+    plan: free
+    buildCommand: npm install && npm run build
+    startCommand: npm start # For Next.js in production
+    envVars:
+      - key: NEXT_PUBLIC_API
+        fromService:
+          type: web
+          name: canaryops-backend
+          property: url
