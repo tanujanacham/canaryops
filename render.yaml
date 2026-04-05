@@ -13,10 +13,7 @@ services:
       - key: USE_MOCK_DATA
         value: "true"
       - key: FRONTEND_URL
-        fromService:
-          type: web
-          name: canaryops-frontend
-          property: url
+        value: https://canaryops-frontend.onrender.com
 
   # ── Frontend Service ─────────────────────────────────────────
   - type: web
@@ -25,10 +22,7 @@ services:
     rootDir: frontend
     plan: free
     buildCommand: npm install && npm run build
-    startCommand: npm start # For Next.js in production
+    startCommand: npm start
     envVars:
       - key: NEXT_PUBLIC_API
-        fromService:
-          type: web
-          name: canaryops-backend
-          property: url
+        value: https://canaryops-backend.onrender.com
