@@ -1,0 +1,145 @@
+.card {
+  background: var(--card);
+  border: 1px solid var(--bd-mid);
+  border-radius: var(--r-lg);
+  padding: 20px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.title {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  color: var(--tx-lo);
+}
+
+.badge {
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: var(--sky);
+  background: var(--sky-dim);
+  border: 1px solid rgba(58,181,229,0.2);
+  padding: 3px 8px;
+  border-radius: var(--r-xs);
+}
+
+.track {
+  display: flex;
+  height: 44px;
+  border-radius: var(--r-sm);
+  overflow: hidden;
+  background: var(--elevated);
+  border: 1px solid var(--bd-dim);
+}
+
+.stableFill {
+  background: linear-gradient(90deg, var(--green), rgba(31,199,117,0.65));
+  box-shadow: 3px 0 10px rgba(31,199,117,0.25);
+  transition: width 0.7s ease;
+}
+
+.canaryFill {
+  background: linear-gradient(90deg, rgba(240,165,0,0.6), var(--amber));
+  transition: width 0.7s ease;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.side {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex: 1;
+}
+
+.sideDot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.sidePct {
+  font-family: var(--font-display);
+  font-size: 28px;
+  line-height: 1;
+  margin-bottom: 2px;
+}
+
+.sideLabel {
+  font-size: 10px;
+  color: var(--tx-lo);
+  letter-spacing: 0.08em;
+}
+
+.divider {
+  width: 1px;
+  height: 36px;
+  background: var(--bd-dim);
+  flex-shrink: 0;
+}
+
+.meta {
+  background: var(--surface);
+  border: 1px solid var(--bd-dim);
+  border-radius: var(--r-sm);
+  padding: 10px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.metaRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.metaKey {
+  font-size: 10px;
+  color: var(--tx-lo);
+  white-space: nowrap;
+}
+
+.metaVal {
+  font-size: 11px;
+  color: var(--tx-mid);
+  text-align: right;
+  word-break: break-all;
+}
+
+.metaValAmber {
+  font-size: 11px;
+  color: var(--amber);
+}
+
+.noData {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  text-align: center;
+  color: var(--amber);
+  font-size: 12px;
+  padding: 20px 0;
+}
+
+.noDataIcon { font-size: 22px; }
+.noDataHint { font-size: 10px; color: var(--tx-lo); font-family: var(--font-body); }

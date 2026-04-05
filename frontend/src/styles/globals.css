@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;500;600;700&family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600;700&display=swap');
+
+:root {
+  /* ── Base surfaces ── */
+  --void:      #060809;
+  --base:      #0b0f12;
+  --surface:   #10161b;
+  --card:      #141c23;
+  --elevated:  #1a2530;
+  --hover:     #1f2d3a;
+
+  /* ── Borders ── */
+  --bd-faint:  rgba(255,255,255,0.04);
+  --bd-dim:    rgba(255,255,255,0.08);
+  --bd-mid:    rgba(255,255,255,0.13);
+  --bd-bright: rgba(255,255,255,0.20);
+
+  /* ── Text ── */
+  --tx-hi:     #dde6ee;
+  --tx-mid:    #7a93a8;
+  --tx-lo:     #3d5262;
+  --tx-faint:  #243341;
+
+  /* ── Brand accent — electric amber ── */
+  --amber:      #f0a500;
+  --amber-dim:  rgba(240,165,0,0.10);
+  --amber-glow: rgba(240,165,0,0.28);
+
+  /* ── Semantic ── */
+  --green:      #1fc775;
+  --green-dim:  rgba(31,199,117,0.10);
+  --green-glow: rgba(31,199,117,0.22);
+
+  --red:        #f04b4b;
+  --red-dim:    rgba(240,75,75,0.10);
+  --red-glow:   rgba(240,75,75,0.22);
+
+  --sky:        #3ab5e5;
+  --sky-dim:    rgba(58,181,229,0.10);
+  --sky-glow:   rgba(58,181,229,0.22);
+
+  --violet:     #9d6df5;
+  --violet-dim: rgba(157,109,245,0.10);
+
+  /* ── Typography ── */
+  --font-mono:    'IBM Plex Mono', 'Fira Code', monospace;
+  --font-display: 'Bebas Neue', sans-serif;
+  --font-body:    'DM Sans', sans-serif;
+
+  /* ── Radii ── */
+  --r-xs: 3px;
+  --r-sm: 6px;
+  --r-md: 10px;
+  --r-lg: 14px;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { font-size: 16px; scroll-behavior: smooth; }
+
+body {
+  background: var(--void);
+  color: var(--tx-hi);
+  font-family: var(--font-mono);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+/* Subtle scan-line overlay for terminal feel */
+body::after {
+  content: '';
+  pointer-events: none;
+  position: fixed;
+  inset: 0;
+  z-index: 9000;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(0,0,0,0.03) 2px,
+    rgba(0,0,0,0.03) 4px
+  );
+}
+
+::-webkit-scrollbar        { width: 5px; height: 5px; }
+::-webkit-scrollbar-track  { background: var(--base); }
+::-webkit-scrollbar-thumb  { background: var(--bd-mid); border-radius: 3px; }
+
+::selection { background: var(--amber-dim); color: var(--amber); }
+
+/* ── Keyframes ── */
+@keyframes fade-up   { from { opacity:0; transform:translateY(14px); } to { opacity:1; transform:translateY(0); } }
+@keyframes fade-in   { from { opacity:0; }                              to { opacity:1; } }
+@keyframes blink     { 0%,100%{opacity:1;} 50%{opacity:0;} }
+@keyframes spin      { to { transform: rotate(360deg); } }
+@keyframes pulse-dot { 0%,100%{transform:scale(1);opacity:1;} 50%{transform:scale(0.75);opacity:0.5;} }
+@keyframes scan      { 0%{transform:translateY(-100%);} 100%{transform:translateY(100vh);} }
+
+.anim-fade-up { animation: fade-up 0.45s ease both; }
+.anim-fade-in { animation: fade-in 0.3s ease both; }
